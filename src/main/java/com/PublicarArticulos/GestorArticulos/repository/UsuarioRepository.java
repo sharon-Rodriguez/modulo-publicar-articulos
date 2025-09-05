@@ -4,10 +4,13 @@
  */
 package com.PublicarArticulos.GestorArticulos.repository;
 
+import com.PublicarArticulos.GestorArticulos.model.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
  * @author USER
  */
-public interface UsuarioRepository {
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     
 }

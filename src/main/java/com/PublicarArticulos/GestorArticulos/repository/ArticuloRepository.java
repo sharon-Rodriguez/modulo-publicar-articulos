@@ -4,10 +4,13 @@
  */
 package com.PublicarArticulos.GestorArticulos.repository;
 
+import com.PublicarArticulos.GestorArticulos.model.Articulos;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
  * @author USER
  */
-public interface ArticuloRepository {
-    
+public interface ArticuloRepository extends JpaRepository<Articulos, Integer> {
+    // Aquí puedes poner métodos personalizados si los necesitas después.
 }

@@ -29,8 +29,8 @@ public class Usuario {
     private String ciudad;
 
     @Column(name = "fecha_registro")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaRegistro;
+    @Temporal(TemporalType.DATE)
+    private Date fechaRegistro;        
 
     @Column(name = "reputacion")
     private Double reputacion;

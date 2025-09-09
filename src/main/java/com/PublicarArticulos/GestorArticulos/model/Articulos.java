@@ -25,11 +25,11 @@ public class Articulos {
     private Usuario usuarioPropietario;
 
     @Column(length = 100, nullable = false)
-    private String nombre;
+    private String Nombre;
 
     private Boolean disponible;
 
-    private Integer precio;
+    private Integer Precio;
 
     @Column(name = "tipo_Accion", length = 20)
     private String tipoAccion;
@@ -37,11 +37,11 @@ public class Articulos {
     @Column(columnDefinition = "TEXT")
     private String descripcion;
 
-    @Column(name = "Imagen_URL", length = 255)
+    @Column(name = "imagen_url", columnDefinition = "TEXT")
     private String imagenUrl;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "Fecha_de_publicacion")
+    @Column(name = "fecha_de_publicacion")
     private Date fechaPublicacion;
 
     // =====================
@@ -65,11 +65,11 @@ public class Articulos {
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
     public Boolean getDisponible() {
@@ -81,11 +81,11 @@ public class Articulos {
     }
 
     public Integer getPrecio() {
-        return precio;
+        return Precio;
     }
 
-    public void setPrecio(Integer precio) {
-        this.precio = precio;
+    public void setPrecio(Integer Precio) {
+        this.Precio = Precio;
     }
 
     public String getTipoAccion() {

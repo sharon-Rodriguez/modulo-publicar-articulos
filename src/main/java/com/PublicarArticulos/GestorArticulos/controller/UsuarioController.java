@@ -32,7 +32,9 @@ public class UsuarioController {
     // Listar todos los usuarios
     @GetMapping
     public List<Usuario> listarUsuarios() {
-        return usuarioRepository.findAll();
+        List<Usuario> usuarios= usuarioRepository.findAll();
+        System.out.println("USUARIOS ENCONTRADOS" + usuarios);
+        return usuarios;
     }
 
     // Buscar usuario por id
@@ -47,7 +49,7 @@ public class UsuarioController {
         return usuarioRepository.findById(id).map(usuario -> {
             usuario.setNombre(usuarioActualizado.getNombre());
             usuario.setCorreo(usuarioActualizado.getCorreo());
-            usuario.setContraseña(usuarioActualizado.getContraseña());
+            usuario.setContrasena(usuarioActualizado.getContrasena());
             usuario.setCiudad(usuarioActualizado.getCiudad());
             usuario.setReputacion(usuarioActualizado.getReputacion());
             return usuarioRepository.save(usuario);

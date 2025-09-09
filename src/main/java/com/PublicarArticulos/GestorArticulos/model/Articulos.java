@@ -19,30 +19,49 @@ public class Articulos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idArticulos;
 
+    // Relación con Usuario
+    @ManyToOne
+    @JoinColumn(name = "id_Usuario", nullable = false)
+    private Usuario usuarioPropietario;
+
+    @Column(length = 100, nullable = false)
     private String nombre;
 
-    private String descripcion;
-
-    private String categoria;
+    private Boolean disponible;
 
     private Integer precio;
 
+    @Column(name = "tipo_Accion", length = 20)
+    private String tipoAccion;
+
+    @Column(columnDefinition = "TEXT")
+    private String descripcion;
+
+    @Column(name = "Imagen_URL", length = 255)
     private String imagenUrl;
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "Fecha_de_publicacion")
     private Date fechaPublicacion;
 
-    // Relación con Usuario
-    @ManyToOne
-    @JoinColumn(name = "id_Usuario")
-    private Usuario usuarioPropietario;
-
+    // =====================
     // Getters y Setters
+    // =====================
+
     public Integer getIdArticulos() {
         return idArticulos;
     }
 
     public void setIdArticulos(Integer idArticulos) {
         this.idArticulos = idArticulos;
+    }
+
+    public Usuario getUsuarioPropietario() {
+        return usuarioPropietario;
+    }
+
+    public void setUsuarioPropietario(Usuario usuarioPropietario) {
+        this.usuarioPropietario = usuarioPropietario;
     }
 
     public String getNombre() {
@@ -53,20 +72,12 @@ public class Articulos {
         this.nombre = nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public Boolean getDisponible() {
+        return disponible;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setDisponible(Boolean disponible) {
+        this.disponible = disponible;
     }
 
     public Integer getPrecio() {
@@ -75,6 +86,22 @@ public class Articulos {
 
     public void setPrecio(Integer precio) {
         this.precio = precio;
+    }
+
+    public String getTipoAccion() {
+        return tipoAccion;
+    }
+
+    public void setTipoAccion(String tipoAccion) {
+        this.tipoAccion = tipoAccion;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getImagenUrl() {
@@ -91,13 +118,5 @@ public class Articulos {
 
     public void setFechaPublicacion(Date fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
-    }
-
-    public Usuario getUsuarioPropietario() {
-        return usuarioPropietario;
-    }
-
-    public void setUsuarioPropietario(Usuario usuarioPropietario) {
-        this.usuarioPropietario = usuarioPropietario;
     }
 }

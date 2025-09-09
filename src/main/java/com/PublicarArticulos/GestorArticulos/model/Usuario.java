@@ -12,7 +12,7 @@ import java.util.Date;
  * @author USER
  */
 @Entity
-@Table(name = "Usuario")
+@Table(name = "usuario")
 public class Usuario {
 
     @Id
@@ -23,12 +23,16 @@ public class Usuario {
 
     private String correo;
 
-    private String contraseña;
+    @Column(name = "contrasena")
+    private String contrasena;
 
     private String ciudad;
 
+    @Column(name = "fecha_registro")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaRegistro;
 
+    @Column(name = "reputacion")
     private Double reputacion;
 
     // Getters y Setters (para acceder a los atributos)
@@ -56,12 +60,12 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getCiudad() {

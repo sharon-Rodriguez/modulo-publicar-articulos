@@ -17,6 +17,7 @@ import java.util.Optional;
  *
  * @author USER
  */
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/articulos")
 public class ArticuloController {

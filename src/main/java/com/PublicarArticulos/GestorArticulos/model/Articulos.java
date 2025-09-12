@@ -21,10 +21,10 @@ public class Articulos {
 
     // Relación con Usuario
     @ManyToOne
-    @JoinColumn(name = "id_Usuario", nullable = false)
+    @JoinColumn(name = "id_Usuario", nullable = true)
     private Usuario usuarioPropietario;
 
-    @Column(length = 100, nullable = false)
+    @Column(length = 100, nullable = true)
     private String Nombre;
 
     private Boolean disponible;
